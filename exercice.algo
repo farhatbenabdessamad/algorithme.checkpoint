@@ -1,0 +1,48 @@
+ALGORITHM Read_a_sentence
+VAR
+lengthCounter: INTEGER 
+wordCounter: INTEGER 
+vowelCounter: INTEGER
+
+BEGIN
+    // Initialize counters
+    lengthCounter = 0
+    wordCounter = 0
+    vowelCounter = 0
+
+    // Iterate through each character in the sentence
+    for each character in sentence:
+        // Increment length counter
+        lengthCounter = lengthCounter + 1
+
+        // Check if the character is a letter 
+        if isLetter(character):
+            // Increment word counter if a letter is followed by a space or it is the last character
+            if isSpace(character) or isLastCharacter(sentence, character):
+                wordCounter = wordCounter + 1
+
+            // Check if the character is a vowel ('a', 'e', 'i', 'o', 'u')
+            if isVowel(character):
+                vowelCounter = vowelCounter + 1
+
+    // Output the results
+    Output "Length of the sentence:", lengthCounter
+    Output "Number of words in the sentence:", wordCounter
+    Output "Number of vowels in the sentence:", vowelCounter
+
+// Helper function to check if a character is a letter
+Function isLetter(character):
+    return (character is a letter)
+
+// Helper function to check if a character is a space
+Function isSpace(character):
+    return (character is a space)
+
+// Helper function to check if a character is a vowel
+Function isVowel(character):
+    return (character is a vowel)
+
+// Helper function to check if a character is the last character in the sentence
+Function isLastCharacter(sentence, character):
+    return (character is the last character in the sentence)
+END
